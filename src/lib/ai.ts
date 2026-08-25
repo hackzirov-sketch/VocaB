@@ -71,8 +71,13 @@ async function callProvider(
   provider: AIProvider,
   prompt: string
 ): Promise<Word[]> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+
+  try {
   const response = await fetch(`${provider.baseURL}/chat/completions`, {
     method: "POST",
+    signal: controller.signal,
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${provider.apiKey}`,
@@ -88,7 +93,7 @@ async function callProvider(
         { role: "user", content: prompt },
       ],
       temperature: 0.7,
-      max_tokens: 4000,
+      max_tokens: 2000,
     }),
   });
 
@@ -107,6 +112,9 @@ async function callProvider(
 
   const parsed = JSON.parse(jsonMatch[0]);
   return parsed.words || [];
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 export async function generateWords(topicName: string): Promise<Word[]> {
