@@ -189,4 +189,22 @@ export const categories: Category[] = [
       { id: 120, name: "Discussing Life Planning", name_uz: "Hayot rejasini muhokama qilish" },
     ],
   },
+  {
+    id: 8,
+    name: "Real-Life Topics",
+    name_uz: "Real Topics",
+    icon: "🗣️",
+    topics: [
+      { id: 121, name: "Daily Conversations", name_uz: "Kundalik suhbatlar" },
+      { id: 122, name: "Shopping and Payments", name_uz: "Xarid va to'lovlar" },
+      { id: 123, name: "Travel and Directions", name_uz: "Sayohat va yo'l so'rash" },
+      { id: 124, name: "Food and Restaurants", name_uz: "Ovqat va restoranlar" },
+      { id: 125, name: "Workplace Communication", name_uz: "Ishdagi muloqot" },
+      { id: 126, name: "Phone Calls and Messages", name_uz: "Telefon qo'ng'iroqlari va xabarlar" },
+      { id: 127, name: "Making Plans and Invitations", name_uz: "Reja va takliflar" },
+      { id: 128, name: "Health and Appointments", name_uz: "Sog'liq va qabulga yozilish" },
+      { id: 129, name: "Problems and Complaints", name_uz: "Muammo va shikoyatlar" },
+      { id: 130, name: "Opinions and Small Talk", name_uz: "Fikrlar va qisqa suhbat" },
+    ],
+  },
 ];
